@@ -84,7 +84,13 @@ inp.addEventListener("input", function () {
   let newUsers = users.filter((user) => {
     return user.name.toLowerCase().startsWith(inp.value.toLowerCase());
   });
-
+if(newUsers.length === 0){
+    document.querySelector(".cards").innerHTML = "<h2 style='color: white; text-align: center; margin-top: 20px;'>No users found</h2>";
+    return;
+}
+else
+{
   document.querySelector(".cards").innerHTML = "";
   showUsers(newUsers);
+}
 });
